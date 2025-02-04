@@ -1,0 +1,2008 @@
+{
+  "1": {
+    "inputs": {
+      "model_path": "/kaggle/working/ComfyUI/models/yolov8/Eyeful_v2-Paired.pt"
+    },
+    "class_type": "Load Yolov8 Model From Path"
+  },
+  "2": {
+    "inputs": {
+      "detect": "all",
+      "label_name": "person,cat,dog",
+      "label_list": "person",
+      "json_type": "Labelme",
+      "threshold": 0.4,
+      "yolov8_model": [
+        "1",
+        0
+      ],
+      "image": [
+        "70",
+        0
+      ]
+    },
+    "class_type": "Apply Yolov8 Model"
+  },
+  "3": {
+    "inputs": {
+      "detect": "all",
+      "label_name": "person,cat,dog",
+      "label_list": "person",
+      "json_type": "Labelme",
+      "threshold": 0.4,
+      "yolov8_model": [
+        "1",
+        0
+      ],
+      "image": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "Apply Yolov8 Model"
+  },
+  "4": {
+    "inputs": {
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "5": {
+    "inputs": {
+      "images": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "6": {
+    "inputs": {
+      "image": "IMG_2242.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "7": {
+    "inputs": {
+      "image": "att.ihLOjgpxv-LlqO81w3gKEPGAGqoA_hPoRQG7oxsehI4.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "9": {
+    "inputs": {
+      "obj": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "ConvertToJsonStr"
+  },
+  "10": {
+    "inputs": {
+      "json_string": [
+        "9",
+        0
+      ],
+      "path": "0.shapes[0].points[0].0"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "11": {
+    "inputs": {
+      "text": [
+        "10",
+        0
+      ],
+      "text2": "401.1233215332031"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "12": {
+    "inputs": {
+      "string": [
+        "11",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "13": {
+    "inputs": {
+      "json_string": [
+        "9",
+        0
+      ],
+      "path": "0.shapes[0].points[1].0"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "14": {
+    "inputs": {
+      "text": [
+        "13",
+        0
+      ],
+      "text2": "738.4205932617188"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "15": {
+    "inputs": {
+      "string": [
+        "14",
+        0
+      ],
+      "rounding": "floor"
+    },
+    "class_type": "StringToNumber"
+  },
+  "16": {
+    "inputs": {
+      "obj": [
+        "3",
+        1
+      ]
+    },
+    "class_type": "ConvertToJsonStr"
+  },
+  "17": {
+    "inputs": {
+      "json_string": [
+        "16",
+        0
+      ],
+      "path": "0.shapes[0].points[0].0"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "18": {
+    "inputs": {
+      "text": [
+        "17",
+        0
+      ],
+      "text2": "308.0909729003906"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "19": {
+    "inputs": {
+      "string": [
+        "18",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "20": {
+    "inputs": {
+      "json_string": [
+        "16",
+        0
+      ],
+      "path": "0.shapes[0].points[1].0"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "21": {
+    "inputs": {
+      "text": [
+        "20",
+        0
+      ],
+      "text2": "619.3652954101562"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "22": {
+    "inputs": {
+      "string": [
+        "21",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "24": {
+    "inputs": {
+      "text": [
+        "37",
+        0
+      ],
+      "text2": "435.90496826171875"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "25": {
+    "inputs": {
+      "string": [
+        "24",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "26": {
+    "inputs": {
+      "text": [
+        "9",
+        0
+      ],
+      "text2": "[{\"version\": \"4.5.6\", \"flags\": {}, \"shapes\": [{\"label\": \"person\", \"points\": [[401.1233215332031, 230.0824737548828], [738.4205932617188, 311.84527587890625]], \"group_id\": null, \"shape_type\": \"rectangle\", \"flags\": {}}], \"imagePath\": \"image0.jpg\", \"imageData\": null, \"imageHeight\": 768, \"imageWidth\": 1024}]"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "27": {
+    "inputs": {
+      "json_string": [
+        "9",
+        0
+      ],
+      "path": "0.shapes[0].points[0].1"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "28": {
+    "inputs": {
+      "text": [
+        "27",
+        0
+      ],
+      "text2": "230.0824737548828"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "29": {
+    "inputs": {
+      "string": [
+        "28",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "30": {
+    "inputs": {
+      "json_string": [
+        "9",
+        0
+      ],
+      "path": "0.shapes[0].points[1].1"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "31": {
+    "inputs": {
+      "text": [
+        "30",
+        0
+      ],
+      "text2": "311.84527587890625"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "32": {
+    "inputs": {
+      "string": [
+        "31",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "33": {
+    "inputs": {
+      "text": [
+        "16",
+        0
+      ],
+      "text2": "[{\"version\": \"4.5.6\", \"flags\": {}, \"shapes\": [{\"label\": \"person\", \"points\": [[308.0909729003906, 363.05810546875], [619.3652954101562, 435.90496826171875]], \"group_id\": null, \"shape_type\": \"rectangle\", \"flags\": {}}], \"imagePath\": \"image0.jpg\", \"imageData\": null, \"imageHeight\": 1077, \"imageWidth\": 867}]"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "34": {
+    "inputs": {
+      "json_string": [
+        "16",
+        0
+      ],
+      "path": "0.shapes[0].points[0].1"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "35": {
+    "inputs": {
+      "text": [
+        "34",
+        0
+      ],
+      "text2": "363.05810546875"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "36": {
+    "inputs": {
+      "string": [
+        "35",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "37": {
+    "inputs": {
+      "json_string": [
+        "16",
+        0
+      ],
+      "path": "0.shapes[0].points[1].1"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "42": {
+    "inputs": {
+      "expression": "(a+b)/2\n",
+      "a": [
+        "12",
+        1
+      ],
+      "b": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "43": {
+    "inputs": {
+      "expression": "(a+b)/2",
+      "a": [
+        "19",
+        1
+      ],
+      "b": [
+        "22",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "44": {
+    "inputs": {
+      "face_mask": false,
+      "background_mask": true,
+      "hair_mask": false,
+      "body_mask": false,
+      "clothes_mask": false,
+      "confidence": 0.4,
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "45": {
+    "inputs": {
+      "mask": [
+        "44",
+        0
+      ]
+    },
+    "class_type": "InvertMask"
+  },
+  "46": {
+    "inputs": {
+      "image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+"
+  },
+  "47": {
+    "inputs": {
+      "face_mask": false,
+      "background_mask": true,
+      "hair_mask": false,
+      "body_mask": false,
+      "clothes_mask": false,
+      "confidence": 0.4,
+      "images": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "48": {
+    "inputs": {
+      "mask": [
+        "47",
+        0
+      ]
+    },
+    "class_type": "InvertMask"
+  },
+  "49": {
+    "inputs": {
+      "image": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+"
+  },
+  "50": {
+    "inputs": {
+      "expression": "(a+b)/2\n",
+      "a": [
+        "29",
+        1
+      ],
+      "b": [
+        "32",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "51": {
+    "inputs": {
+      "expression": "(a+b)/2",
+      "a": [
+        "36",
+        1
+      ],
+      "b": [
+        "25",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "52": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Int-🔬"
+  },
+  "53": {
+    "inputs": {
+      "width": [
+        "46",
+        0
+      ],
+      "height": [
+        "46",
+        1
+      ],
+      "batch_size": 1,
+      "color": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "EmptyImage"
+  },
+  "54": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "53",
+        0
+      ],
+      "source": [
+        "7",
+        0
+      ],
+      "mask": [
+        "45",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "55": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Int-🔬"
+  },
+  "56": {
+    "inputs": {
+      "width": [
+        "49",
+        0
+      ],
+      "height": [
+        "49",
+        1
+      ],
+      "batch_size": 1,
+      "color": [
+        "55",
+        0
+      ]
+    },
+    "class_type": "EmptyImage"
+  },
+  "57": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "56",
+        0
+      ],
+      "source": [
+        "6",
+        0
+      ],
+      "mask": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "58": {
+    "inputs": {
+      "images": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "59": {
+    "inputs": {
+      "images": [
+        "57",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "62": {
+    "inputs": {
+      "comparison": "a <= b",
+      "a": [
+        "42",
+        1
+      ],
+      "b": [
+        "43",
+        1
+      ]
+    },
+    "class_type": "Compare-🔬"
+  },
+  "63": {
+    "inputs": {
+      "ANY": [
+        "62",
+        0
+      ],
+      "IF_TRUE": [
+        "65",
+        0
+      ],
+      "IF_FALSE": [
+        "66",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "64": {
+    "inputs": {
+      "ANY": [
+        "62",
+        0
+      ],
+      "IF_TRUE": [
+        "67",
+        0
+      ],
+      "IF_FALSE": [
+        "68",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "65": {
+    "inputs": {
+      "expression": "round(b-a)",
+      "a": [
+        "42",
+        1
+      ],
+      "b": [
+        "43",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "66": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Int-🔬"
+  },
+  "67": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Int-🔬"
+  },
+  "68": {
+    "inputs": {
+      "expression": "round(a-b)",
+      "a": [
+        "42",
+        1
+      ],
+      "b": [
+        "43",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "69": {
+    "inputs": {
+      "value": 1024
+    },
+    "class_type": "Int-🔬"
+  },
+  "70": {
+    "inputs": {
+      "max_width": [
+        "69",
+        0
+      ],
+      "max_height": [
+        "69",
+        0
+      ],
+      "min_width": 0,
+      "min_height": 0,
+      "crop_if_required": "no",
+      "images": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "ConstrainImage|pysssss"
+  },
+  "71": {
+    "inputs": {
+      "max_width": [
+        "69",
+        0
+      ],
+      "max_height": [
+        "69",
+        0
+      ],
+      "min_width": 0,
+      "min_height": 0,
+      "crop_if_required": "no",
+      "images": [
+        "57",
+        0
+      ]
+    },
+    "class_type": "ConstrainImage|pysssss"
+  },
+  "72": {
+    "inputs": {
+      "comparison": "a <= b",
+      "a": [
+        "50",
+        1
+      ],
+      "b": [
+        "51",
+        1
+      ]
+    },
+    "class_type": "Compare-🔬"
+  },
+  "73": {
+    "inputs": {
+      "image": [
+        "70",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+"
+  },
+  "74": {
+    "inputs": {
+      "image": [
+        "71",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+"
+  },
+  "75": {
+    "inputs": {
+      "ANY": [
+        "72",
+        0
+      ],
+      "IF_TRUE": [
+        "77",
+        0
+      ],
+      "IF_FALSE": [
+        "78",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "76": {
+    "inputs": {
+      "ANY": [
+        "72",
+        0
+      ],
+      "IF_TRUE": [
+        "79",
+        0
+      ],
+      "IF_FALSE": [
+        "80",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "77": {
+    "inputs": {
+      "expression": "round(b-a)",
+      "a": [
+        "50",
+        1
+      ],
+      "b": [
+        "51",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "78": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Int-🔬"
+  },
+  "79": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Int-🔬"
+  },
+  "80": {
+    "inputs": {
+      "expression": "round(a-b)",
+      "a": [
+        "50",
+        1
+      ],
+      "b": [
+        "51",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "81": {
+    "inputs": {
+      "object": "face",
+      "padding": 0,
+      "image": [
+        "70",
+        0
+      ]
+    },
+    "class_type": "ToolYoloCropper"
+  },
+  "82": {
+    "inputs": {
+      "object": "face",
+      "padding": 0,
+      "image": [
+        "71",
+        0
+      ]
+    },
+    "class_type": "ToolYoloCropper"
+  },
+  "83": {
+    "inputs": {
+      "width": [
+        "73",
+        0
+      ],
+      "height": [
+        "73",
+        1
+      ],
+      "x": [
+        "63",
+        0
+      ],
+      "y": [
+        "75",
+        0
+      ],
+      "image": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "ImageCrop"
+  },
+  "85": {
+    "inputs": {
+      "width": [
+        "73",
+        0
+      ],
+      "height": [
+        "73",
+        1
+      ],
+      "batch_size": 1,
+      "color": [
+        "55",
+        0
+      ]
+    },
+    "class_type": "EmptyImage"
+  },
+  "86": {
+    "inputs": {
+      "x": [
+        "64",
+        0
+      ],
+      "y": [
+        "76",
+        0
+      ],
+      "resize_source": false,
+      "destination": [
+        "85",
+        0
+      ],
+      "source": [
+        "83",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "87": {
+    "inputs": {
+      "images": [
+        "81",
+        2
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "88": {
+    "inputs": {
+      "image": [
+        "81",
+        2
+      ]
+    },
+    "class_type": "GetImageSize+"
+  },
+  "89": {
+    "inputs": {
+      "images": [
+        "82",
+        2
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "90": {
+    "inputs": {
+      "image": [
+        "82",
+        2
+      ]
+    },
+    "class_type": "GetImageSize+"
+  },
+  "91": {
+    "inputs": {
+      "images": [
+        "86",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "104": {
+    "inputs": {
+      "expression": "a/b",
+      "a": [
+        "88",
+        0
+      ],
+      "b": [
+        "90",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "105": {
+    "inputs": {
+      "expression": "a/b",
+      "a": [
+        "88",
+        1
+      ],
+      "b": [
+        "90",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "112": {
+    "inputs": {
+      "expression": "round(a*b)",
+      "a": [
+        "74",
+        0
+      ],
+      "b": [
+        "104",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "113": {
+    "inputs": {
+      "expression": "round(a*b)",
+      "a": [
+        "74",
+        1
+      ],
+      "b": [
+        "105",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "117": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "width": [
+        "112",
+        0
+      ],
+      "height": [
+        "113",
+        0
+      ],
+      "crop": "disabled",
+      "image": [
+        "71",
+        0
+      ]
+    },
+    "class_type": "ImageScale"
+  },
+  "118": {
+    "inputs": {
+      "images": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "124": {
+    "inputs": {
+      "face_mask": false,
+      "background_mask": false,
+      "hair_mask": true,
+      "body_mask": false,
+      "clothes_mask": false,
+      "confidence": 0.4,
+      "images": [
+        "70",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "132": {
+    "inputs": {
+      "scale": 0.5,
+      "blur_sigma": 2,
+      "model": [
+        "135",
+        0
+      ]
+    },
+    "class_type": "SelfAttentionGuidance"
+  },
+  "133": {
+    "inputs": {
+      "ipadapter_file": "ip-adapter-plus_sdxl_vit-h.safetensors"
+    },
+    "class_type": "IPAdapterModelLoader"
+  },
+  "134": {
+    "inputs": {
+      "clip_name": "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+    },
+    "class_type": "CLIPVisionLoader"
+  },
+  "135": {
+    "inputs": {
+      "ckpt_name": "Realism Engine SDXL.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple"
+  },
+  "136": {
+    "inputs": {
+      "face_mask": true,
+      "background_mask": false,
+      "hair_mask": true,
+      "body_mask": false,
+      "clothes_mask": false,
+      "confidence": 0.4,
+      "images": [
+        "70",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "138": {
+    "inputs": {
+      "mask": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "139": {
+    "inputs": {
+      "images": [
+        "138",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "142": {
+    "inputs": {
+      "model": [
+        "132",
+        0
+      ]
+    },
+    "class_type": "DifferentialDiffusion"
+  },
+  "145": {
+    "inputs": {
+      "text": "4K Ultra HD, crystal-clear details, high-definition, sharp focus, photorealistic, fine textures, hyper-realistic details, cinematic quality, enhanced 3D effect, noise-free, enhanced sharpness, bright, vivid color, seamless gradients, black plain background.",
+      "clip": [
+        "135",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "146": {
+    "inputs": {
+      "text": "text, water, multiple people, logo, brand, \nArtificial, blurry details, low-resolution, pixelated, out-of-focus, overexposed, underexposed, oversaturated, washed-out colors, distorted textures, grainy, noisy, flat depth, low contrast, poorly balanced tones, dull colors, cartoonish, jagged edges, unnatural proportions, unrealistic anatomy, mismatched elements, uneven gradients, chromatic aberration, color banding, lack of detail, oversharpened, unnatural, distorted, deformed, unrealistic, awkward, creepy, dark.",
+      "clip": [
+        "135",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "147": {
+    "inputs": {
+      "interpolation": "BILINEAR",
+      "crop_position": "top",
+      "sharpening": 0.15,
+      "image": [
+        "269",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision"
+  },
+  "148": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "subtract",
+      "destination": [
+        "206",
+        0
+      ],
+      "source": [
+        "156",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "151": {
+    "inputs": {
+      "mask": [
+        "148",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "152": {
+    "inputs": {
+      "images": [
+        "151",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "156": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "subtract",
+      "destination": [
+        "206",
+        0
+      ],
+      "source": [
+        "210",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "158": {
+    "inputs": {
+      "mask": [
+        "156",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "159": {
+    "inputs": {
+      "images": [
+        "158",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "161": {
+    "inputs": {
+      "weight": 1,
+      "ipadapter": [
+        "133",
+        0
+      ],
+      "image": [
+        "147",
+        0
+      ],
+      "clip_vision": [
+        "134",
+        0
+      ]
+    },
+    "class_type": "IPAdapterEncoder"
+  },
+  "162": {
+    "inputs": {
+      "head": "fooocus_inpaint_head.pth",
+      "patch": "inpaint_v26.fooocus.patch"
+    },
+    "class_type": "INPAINT_LoadFooocusInpaint"
+  },
+  "163": {
+    "inputs": {
+      "grow_mask_by": 0,
+      "pixels": [
+        "259",
+        0
+      ],
+      "vae": [
+        "135",
+        2
+      ],
+      "mask": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "VAEEncodeForInpaint"
+  },
+  "164": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "add",
+      "destination": [
+        "309",
+        0
+      ],
+      "source": [
+        "223",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "166": {
+    "inputs": {
+      "width": [
+        "73",
+        0
+      ],
+      "height": [
+        "73",
+        1
+      ],
+      "batch_size": 1,
+      "color": 0
+    },
+    "class_type": "EmptyImage"
+  },
+  "167": {
+    "inputs": {
+      "mask": [
+        "164",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "168": {
+    "inputs": {
+      "images": [
+        "167",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "169": {
+    "inputs": {
+      "mask": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "InvertMask"
+  },
+  "171": {
+    "inputs": {
+      "model": [
+        "142",
+        0
+      ],
+      "patch": [
+        "162",
+        0
+      ],
+      "latent": [
+        "163",
+        0
+      ]
+    },
+    "class_type": "INPAINT_ApplyFooocusInpaint"
+  },
+  "172": {
+    "inputs": {
+      "noise_mask": false,
+      "positive": [
+        "145",
+        0
+      ],
+      "negative": [
+        "146",
+        0
+      ],
+      "vae": [
+        "135",
+        2
+      ],
+      "pixels": [
+        "259",
+        0
+      ],
+      "mask": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "InpaintModelConditioning"
+  },
+  "173": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "166",
+        0
+      ],
+      "source": [
+        "259",
+        0
+      ],
+      "mask": [
+        "169",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "174": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "subtract",
+      "destination": [
+        "164",
+        0
+      ],
+      "source": [
+        "222",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "175": {
+    "inputs": {
+      "weight": 0.9,
+      "weight_type": "ease in",
+      "start_at": 0,
+      "end_at": 0.9,
+      "embeds_scaling": "V only",
+      "model": [
+        "171",
+        0
+      ],
+      "ipadapter": [
+        "133",
+        0
+      ],
+      "pos_embed": [
+        "161",
+        0
+      ],
+      "neg_embed": [
+        "161",
+        1
+      ],
+      "clip_vision": [
+        "134",
+        0
+      ]
+    },
+    "class_type": "IPAdapterEmbeds"
+  },
+  "176": {
+    "inputs": {
+      "amount": 1,
+      "samples": [
+        "172",
+        2
+      ]
+    },
+    "class_type": "RepeatLatentBatch"
+  },
+  "177": {
+    "inputs": {
+      "mask": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "178": {
+    "inputs": {
+      "images": [
+        "177",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "179": {
+    "inputs": {
+      "images": [
+        "173",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "180": {
+    "inputs": {
+      "seed": 1041930294347684,
+      "steps": 25,
+      "cfg": 8,
+      "sampler_name": "ddpm",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "175",
+        0
+      ],
+      "positive": [
+        "172",
+        0
+      ],
+      "negative": [
+        "172",
+        1
+      ],
+      "latent_image": [
+        "176",
+        0
+      ]
+    },
+    "class_type": "KSampler"
+  },
+  "181": {
+    "inputs": {
+      "samples": [
+        "180",
+        0
+      ],
+      "vae": [
+        "135",
+        2
+      ]
+    },
+    "class_type": "VAEDecode"
+  },
+  "182": {
+    "inputs": {
+      "images": [
+        "181",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "201": {
+    "inputs": {
+      "mask": [
+        "124",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "202": {
+    "inputs": {
+      "images": [
+        "201",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "203": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 35,
+      "remove_isolated_pixels": 0,
+      "smooth": 20,
+      "blur": 0,
+      "mask": [
+        "124",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "204": {
+    "inputs": {
+      "mask": [
+        "203",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "205": {
+    "inputs": {
+      "images": [
+        "204",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "206": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "subtract",
+      "destination": [
+        "136",
+        0
+      ],
+      "source": [
+        "203",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "208": {
+    "inputs": {
+      "mask": [
+        "206",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "209": {
+    "inputs": {
+      "images": [
+        "208",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "210": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "subtract",
+      "destination": [
+        "216",
+        0
+      ],
+      "source": [
+        "217",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "211": {
+    "inputs": {
+      "face_mask": false,
+      "background_mask": false,
+      "hair_mask": true,
+      "body_mask": false,
+      "clothes_mask": false,
+      "confidence": 0.4,
+      "images": [
+        "86",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "212": {
+    "inputs": {
+      "mask": [
+        "211",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "213": {
+    "inputs": {
+      "images": [
+        "212",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "214": {
+    "inputs": {
+      "mask": [
+        "217",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "215": {
+    "inputs": {
+      "images": [
+        "214",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "216": {
+    "inputs": {
+      "face_mask": true,
+      "background_mask": false,
+      "hair_mask": true,
+      "body_mask": false,
+      "clothes_mask": false,
+      "confidence": 0.4,
+      "images": [
+        "86",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "217": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 35,
+      "remove_isolated_pixels": 0,
+      "smooth": 20,
+      "blur": 0,
+      "mask": [
+        "211",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "220": {
+    "inputs": {
+      "mask": [
+        "210",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "221": {
+    "inputs": {
+      "images": [
+        "220",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "222": {
+    "inputs": {
+      "amount": 40,
+      "mask": [
+        "148",
+        0
+      ]
+    },
+    "class_type": "MaskSmooth+"
+  },
+  "223": {
+    "inputs": {
+      "expand": 40,
+      "tapered_corners": true,
+      "mask": [
+        "217",
+        0
+      ]
+    },
+    "class_type": "GrowMask"
+  },
+  "259": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "261",
+        0
+      ],
+      "source": [
+        "70",
+        0
+      ],
+      "mask": [
+        "308",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "260": {
+    "inputs": {
+      "images": [
+        "259",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "261": {
+    "inputs": {
+      "width": [
+        "73",
+        0
+      ],
+      "height": [
+        "73",
+        1
+      ],
+      "batch_size": 1,
+      "color": 0
+    },
+    "class_type": "EmptyImage"
+  },
+  "262": {
+    "inputs": {
+      "face_mask": false,
+      "background_mask": false,
+      "hair_mask": false,
+      "body_mask": true,
+      "clothes_mask": true,
+      "confidence": 0.42,
+      "images": [
+        "70",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "263": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 35,
+      "remove_isolated_pixels": 0,
+      "smooth": 20,
+      "blur": 0,
+      "mask": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "268": {
+    "inputs": {
+      "width": [
+        "73",
+        0
+      ],
+      "height": [
+        "73",
+        1
+      ],
+      "batch_size": 1,
+      "color": 0
+    },
+    "class_type": "EmptyImage"
+  },
+  "269": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "268",
+        0
+      ],
+      "source": [
+        "86",
+        0
+      ],
+      "mask": [
+        "272",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "270": {
+    "inputs": {
+      "face_mask": true,
+      "background_mask": false,
+      "hair_mask": true,
+      "body_mask": true,
+      "clothes_mask": true,
+      "confidence": 0.4,
+      "images": [
+        "86",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "271": {
+    "inputs": {
+      "images": [
+        "269",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "272": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 35,
+      "remove_isolated_pixels": 0,
+      "smooth": 20,
+      "blur": 0,
+      "mask": [
+        "270",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "291": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 0,
+      "remove_isolated_pixels": 32,
+      "smooth": 0,
+      "blur": 0,
+      "mask": [
+        "262",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "292": {
+    "inputs": {
+      "mask": [
+        "307",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "293": {
+    "inputs": {
+      "images": [
+        "292",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "295": {
+    "inputs": {
+      "mask": [
+        "216",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "296": {
+    "inputs": {
+      "images": [
+        "295",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "298": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "add",
+      "destination": [
+        "307",
+        0
+      ],
+      "source": [
+        "263",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "303": {
+    "inputs": {
+      "mask": [
+        "308",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "304": {
+    "inputs": {
+      "images": [
+        "303",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "307": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 35,
+      "remove_isolated_pixels": 0,
+      "smooth": 20,
+      "blur": 0,
+      "mask": [
+        "291",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "308": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 35,
+      "remove_isolated_pixels": 0,
+      "smooth": 0,
+      "blur": 0,
+      "mask": [
+        "298",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "309": {
+    "inputs": {
+      "expand": 40,
+      "tapered_corners": true,
+      "mask": [
+        "203",
+        0
+      ]
+    },
+    "class_type": "GrowMask"
+  }
+}

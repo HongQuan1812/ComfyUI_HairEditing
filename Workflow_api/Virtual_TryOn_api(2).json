@@ -1,0 +1,1654 @@
+{
+  "1": {
+    "inputs": {
+      "image": "Taylor_Swift_at_the_Golden_Globes_2024_(Enhanced,_cropped)_1.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "2": {
+    "inputs": {
+      "image": "female_portrait_postcrest.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "3": {
+    "inputs": {
+      "model_path": "/kaggle/working/ComfyUI/models/yolov8/Eyeful_v2-Paired.pt"
+    },
+    "class_type": "Load Yolov8 Model From Path"
+  },
+  "4": {
+    "inputs": {
+      "object": "person",
+      "padding": 0,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "ToolYoloCropper"
+  },
+  "6": {
+    "inputs": {
+      "object": "person",
+      "padding": 0,
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "ToolYoloCropper"
+  },
+  "8": {
+    "inputs": {
+      "detect": "all",
+      "label_name": "person,cat,dog",
+      "label_list": "person",
+      "json_type": "Labelme",
+      "threshold": 0.4,
+      "yolov8_model": [
+        "3",
+        0
+      ],
+      "image": [
+        "61",
+        0
+      ]
+    },
+    "class_type": "Apply Yolov8 Model"
+  },
+  "9": {
+    "inputs": {
+      "detect": "all",
+      "label_name": "person,cat,dog",
+      "label_list": "person",
+      "json_type": "Labelme",
+      "threshold": 0.4,
+      "yolov8_model": [
+        "3",
+        0
+      ],
+      "image": [
+        "105",
+        0
+      ]
+    },
+    "class_type": "Apply Yolov8 Model"
+  },
+  "12": {
+    "inputs": {
+      "face_mask": false,
+      "background_mask": true,
+      "hair_mask": false,
+      "body_mask": false,
+      "clothes_mask": false,
+      "confidence": 0.4,
+      "images": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "13": {
+    "inputs": {
+      "mask": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "InvertMask"
+  },
+  "14": {
+    "inputs": {
+      "image": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "GetImageSize+"
+  },
+  "15": {
+    "inputs": {
+      "face_mask": false,
+      "background_mask": true,
+      "hair_mask": false,
+      "body_mask": false,
+      "clothes_mask": false,
+      "confidence": 0.4,
+      "images": [
+        "6",
+        2
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "16": {
+    "inputs": {
+      "mask": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "InvertMask"
+  },
+  "17": {
+    "inputs": {
+      "image": [
+        "6",
+        2
+      ]
+    },
+    "class_type": "GetImageSize+"
+  },
+  "18": {
+    "inputs": {
+      "obj": [
+        "9",
+        1
+      ]
+    },
+    "class_type": "ConvertToJsonStr"
+  },
+  "19": {
+    "inputs": {
+      "json_string": [
+        "18",
+        0
+      ],
+      "path": "0.shapes[0].points[0].0"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "20": {
+    "inputs": {
+      "text": [
+        "19",
+        0
+      ],
+      "text2": "372.2579345703125"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "21": {
+    "inputs": {
+      "string": [
+        "20",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "22": {
+    "inputs": {
+      "json_string": [
+        "18",
+        0
+      ],
+      "path": "0.shapes[0].points[1].0"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "23": {
+    "inputs": {
+      "text": [
+        "22",
+        0
+      ],
+      "text2": "628.9254150390625"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "24": {
+    "inputs": {
+      "string": [
+        "23",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "25": {
+    "inputs": {
+      "obj": [
+        "8",
+        1
+      ]
+    },
+    "class_type": "ConvertToJsonStr"
+  },
+  "26": {
+    "inputs": {
+      "json_string": [
+        "25",
+        0
+      ],
+      "path": "0.shapes[0].points[0].0"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "27": {
+    "inputs": {
+      "text": [
+        "26",
+        0
+      ],
+      "text2": "301.88824462890625"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "28": {
+    "inputs": {
+      "string": [
+        "27",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "29": {
+    "inputs": {
+      "json_string": [
+        "25",
+        0
+      ],
+      "path": "0.shapes[0].points[1].0"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "30": {
+    "inputs": {
+      "text": [
+        "29",
+        0
+      ],
+      "text2": "550.4887084960938"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "31": {
+    "inputs": {
+      "string": [
+        "30",
+        0
+      ],
+      "rounding": "floor"
+    },
+    "class_type": "StringToNumber"
+  },
+  "34": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Int-🔬"
+  },
+  "35": {
+    "inputs": {
+      "width": [
+        "14",
+        0
+      ],
+      "height": [
+        "14",
+        1
+      ],
+      "batch_size": 1,
+      "color": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "EmptyImage"
+  },
+  "36": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "35",
+        0
+      ],
+      "source": [
+        "4",
+        2
+      ],
+      "mask": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "37": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Int-🔬"
+  },
+  "38": {
+    "inputs": {
+      "width": [
+        "17",
+        0
+      ],
+      "height": [
+        "17",
+        1
+      ],
+      "batch_size": 1,
+      "color": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "EmptyImage"
+  },
+  "39": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "38",
+        0
+      ],
+      "source": [
+        "6",
+        2
+      ],
+      "mask": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "40": {
+    "inputs": {
+      "text": [
+        "45",
+        0
+      ],
+      "text2": "353.5643005371094"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "41": {
+    "inputs": {
+      "text": [
+        "25",
+        0
+      ],
+      "text2": "[{\"version\": \"4.5.6\", \"flags\": {}, \"shapes\": [{\"label\": \"person\", \"points\": [[301.88824462890625, 283.26129150390625], [550.4887084960938, 353.5643005371094]], \"group_id\": null, \"shape_type\": \"rectangle\", \"flags\": {}}], \"imagePath\": \"image0.jpg\", \"imageData\": null, \"imageHeight\": 1024, \"imageWidth\": 833}]"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "42": {
+    "inputs": {
+      "json_string": [
+        "25",
+        0
+      ],
+      "path": "0.shapes[0].points[0].1"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "43": {
+    "inputs": {
+      "text": [
+        "42",
+        0
+      ],
+      "text2": "283.26129150390625"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "44": {
+    "inputs": {
+      "string": [
+        "43",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "45": {
+    "inputs": {
+      "json_string": [
+        "25",
+        0
+      ],
+      "path": "0.shapes[0].points[1].1"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "46": {
+    "inputs": {
+      "string": [
+        "40",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "47": {
+    "inputs": {
+      "text": [
+        "18",
+        0
+      ],
+      "text2": "[{\"version\": \"4.5.6\", \"flags\": {}, \"shapes\": [{\"label\": \"person\", \"points\": [[372.2579345703125, 286.2952575683594], [628.9254150390625, 349.2981872558594]], \"group_id\": null, \"shape_type\": \"rectangle\", \"flags\": {}}], \"imagePath\": \"image0.jpg\", \"imageData\": null, \"imageHeight\": 686, \"imageWidth\": 982}]"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "48": {
+    "inputs": {
+      "json_string": [
+        "18",
+        0
+      ],
+      "path": "0.shapes[0].points[0].1"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "49": {
+    "inputs": {
+      "text": [
+        "48",
+        0
+      ],
+      "text2": "286.2952575683594"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "50": {
+    "inputs": {
+      "string": [
+        "49",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "51": {
+    "inputs": {
+      "json_string": [
+        "18",
+        0
+      ],
+      "path": "0.shapes[0].points[1].1"
+    },
+    "class_type": "JSONParserNode"
+  },
+  "52": {
+    "inputs": {
+      "text": [
+        "51",
+        0
+      ],
+      "text2": "349.2981872558594"
+    },
+    "class_type": "ShowText|pysssss"
+  },
+  "53": {
+    "inputs": {
+      "string": [
+        "52",
+        0
+      ],
+      "rounding": "round"
+    },
+    "class_type": "StringToNumber"
+  },
+  "56": {
+    "inputs": {
+      "expression": "(a+b)/2\n",
+      "a": [
+        "28",
+        1
+      ],
+      "b": [
+        "31",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "57": {
+    "inputs": {
+      "expression": "(a+b)/2",
+      "a": [
+        "21",
+        1
+      ],
+      "b": [
+        "24",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "58": {
+    "inputs": {
+      "expression": "(a+b)/2\n",
+      "a": [
+        "44",
+        1
+      ],
+      "b": [
+        "46",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "59": {
+    "inputs": {
+      "expression": "(a+b)/2",
+      "a": [
+        "50",
+        1
+      ],
+      "b": [
+        "53",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "60": {
+    "inputs": {
+      "value": 1024
+    },
+    "class_type": "Int-🔬"
+  },
+  "61": {
+    "inputs": {
+      "max_width": [
+        "60",
+        0
+      ],
+      "max_height": [
+        "60",
+        0
+      ],
+      "min_width": 0,
+      "min_height": 0,
+      "crop_if_required": "no",
+      "images": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "ConstrainImage|pysssss"
+  },
+  "62": {
+    "inputs": {
+      "max_width": [
+        "60",
+        0
+      ],
+      "max_height": [
+        "60",
+        0
+      ],
+      "min_width": 0,
+      "min_height": 0,
+      "crop_if_required": "no",
+      "images": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "ConstrainImage|pysssss"
+  },
+  "63": {
+    "inputs": {
+      "image": [
+        "61",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+"
+  },
+  "64": {
+    "inputs": {
+      "image": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+"
+  },
+  "67": {
+    "inputs": {
+      "object": "face",
+      "padding": 0,
+      "image": [
+        "61",
+        0
+      ]
+    },
+    "class_type": "ToolYoloCropper"
+  },
+  "68": {
+    "inputs": {
+      "object": "face",
+      "padding": 0,
+      "image": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "ToolYoloCropper"
+  },
+  "69": {
+    "inputs": {
+      "comparison": "a <= b",
+      "a": [
+        "56",
+        1
+      ],
+      "b": [
+        "57",
+        1
+      ]
+    },
+    "class_type": "Compare-🔬"
+  },
+  "70": {
+    "inputs": {
+      "ANY": [
+        "69",
+        0
+      ],
+      "IF_TRUE": [
+        "72",
+        0
+      ],
+      "IF_FALSE": [
+        "73",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "71": {
+    "inputs": {
+      "ANY": [
+        "69",
+        0
+      ],
+      "IF_TRUE": [
+        "74",
+        0
+      ],
+      "IF_FALSE": [
+        "75",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "72": {
+    "inputs": {
+      "expression": "round(b-a)",
+      "a": [
+        "56",
+        1
+      ],
+      "b": [
+        "57",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "73": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Int-🔬"
+  },
+  "74": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Int-🔬"
+  },
+  "75": {
+    "inputs": {
+      "expression": "round(a-b)",
+      "a": [
+        "56",
+        1
+      ],
+      "b": [
+        "57",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "76": {
+    "inputs": {
+      "comparison": "a <= b",
+      "a": [
+        "58",
+        1
+      ],
+      "b": [
+        "59",
+        1
+      ]
+    },
+    "class_type": "Compare-🔬"
+  },
+  "78": {
+    "inputs": {
+      "image": [
+        "67",
+        2
+      ]
+    },
+    "class_type": "GetImageSize+"
+  },
+  "80": {
+    "inputs": {
+      "image": [
+        "68",
+        2
+      ]
+    },
+    "class_type": "GetImageSize+"
+  },
+  "81": {
+    "inputs": {
+      "ANY": [
+        "76",
+        0
+      ],
+      "IF_TRUE": [
+        "83",
+        0
+      ],
+      "IF_FALSE": [
+        "84",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "82": {
+    "inputs": {
+      "ANY": [
+        "76",
+        0
+      ],
+      "IF_TRUE": [
+        "85",
+        0
+      ],
+      "IF_FALSE": [
+        "86",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "83": {
+    "inputs": {
+      "expression": "round(b-a)",
+      "a": [
+        "58",
+        1
+      ],
+      "b": [
+        "59",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "84": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Int-🔬"
+  },
+  "85": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "Int-🔬"
+  },
+  "86": {
+    "inputs": {
+      "expression": "round(a-b)",
+      "a": [
+        "58",
+        1
+      ],
+      "b": [
+        "59",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "87": {
+    "inputs": {
+      "width": [
+        "63",
+        0
+      ],
+      "height": [
+        "63",
+        1
+      ],
+      "x": [
+        "70",
+        0
+      ],
+      "y": [
+        "81",
+        0
+      ],
+      "image": [
+        "105",
+        0
+      ]
+    },
+    "class_type": "ImageCrop"
+  },
+  "89": {
+    "inputs": {
+      "width": [
+        "63",
+        0
+      ],
+      "height": [
+        "63",
+        1
+      ],
+      "batch_size": 1,
+      "color": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "EmptyImage"
+  },
+  "90": {
+    "inputs": {
+      "x": [
+        "71",
+        0
+      ],
+      "y": [
+        "82",
+        0
+      ],
+      "resize_source": false,
+      "destination": [
+        "89",
+        0
+      ],
+      "source": [
+        "87",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "99": {
+    "inputs": {
+      "expression": "a/b",
+      "a": [
+        "78",
+        0
+      ],
+      "b": [
+        "80",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "100": {
+    "inputs": {
+      "expression": "a/b",
+      "a": [
+        "78",
+        1
+      ],
+      "b": [
+        "80",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "103": {
+    "inputs": {
+      "expression": "round(a*b)",
+      "a": [
+        "64",
+        0
+      ],
+      "b": [
+        "99",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "104": {
+    "inputs": {
+      "expression": "round(a*b)",
+      "a": [
+        "64",
+        1
+      ],
+      "b": [
+        "100",
+        1
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "105": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "width": [
+        "103",
+        0
+      ],
+      "height": [
+        "104",
+        0
+      ],
+      "crop": "disabled",
+      "image": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "ImageScale"
+  },
+  "107": {
+    "inputs": {
+      "width": [
+        "63",
+        0
+      ],
+      "height": [
+        "63",
+        1
+      ],
+      "batch_size": 1,
+      "color": 0
+    },
+    "class_type": "EmptyImage"
+  },
+  "108": {
+    "inputs": {
+      "face_mask": true,
+      "background_mask": false,
+      "hair_mask": true,
+      "body_mask": true,
+      "clothes_mask": true,
+      "confidence": 0.4,
+      "images": [
+        "90",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "109": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 35,
+      "remove_isolated_pixels": 0,
+      "smooth": 20,
+      "blur": 0,
+      "mask": [
+        "108",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "110": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "107",
+        0
+      ],
+      "source": [
+        "90",
+        0
+      ],
+      "mask": [
+        "109",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "116": {
+    "inputs": {
+      "face_mask": false,
+      "background_mask": false,
+      "hair_mask": true,
+      "body_mask": false,
+      "clothes_mask": false,
+      "confidence": 0.4,
+      "images": [
+        "61",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "118": {
+    "inputs": {
+      "face_mask": false,
+      "background_mask": false,
+      "hair_mask": true,
+      "body_mask": false,
+      "clothes_mask": false,
+      "confidence": 0.4,
+      "images": [
+        "90",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "122": {
+    "inputs": {
+      "scale": 0.5,
+      "blur_sigma": 2,
+      "model": [
+        "125",
+        0
+      ]
+    },
+    "class_type": "SelfAttentionGuidance"
+  },
+  "123": {
+    "inputs": {
+      "ipadapter_file": "ip-adapter-plus_sdxl_vit-h.safetensors"
+    },
+    "class_type": "IPAdapterModelLoader"
+  },
+  "124": {
+    "inputs": {
+      "clip_name": "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+    },
+    "class_type": "CLIPVisionLoader"
+  },
+  "125": {
+    "inputs": {
+      "ckpt_name": "Realism Engine SDXL.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple"
+  },
+  "129": {
+    "inputs": {
+      "model": [
+        "122",
+        0
+      ]
+    },
+    "class_type": "DifferentialDiffusion"
+  },
+  "130": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 35,
+      "remove_isolated_pixels": 0,
+      "smooth": 20,
+      "blur": 0,
+      "mask": [
+        "116",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "132": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 35,
+      "remove_isolated_pixels": 0,
+      "smooth": 20,
+      "blur": 0,
+      "mask": [
+        "118",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "136": {
+    "inputs": {
+      "text": "4K Ultra HD, crystal-clear details, high-definition, sharp focus, photorealistic, fine textures, hyper-realistic details, cinematic quality, enhanced 3D effect, noise-free, enhanced sharpness, bright, vivid color, seamless gradients, black plain background.",
+      "clip": [
+        "125",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "137": {
+    "inputs": {
+      "text": "text, water, multiple people, logo, brand, \nArtificial, blurry details, low-resolution, pixelated, out-of-focus, overexposed, underexposed, oversaturated, washed-out colors, distorted textures, grainy, noisy, flat depth, low contrast, poorly balanced tones, dull colors, cartoonish, jagged edges, unnatural proportions, unrealistic anatomy, mismatched elements, uneven gradients, chromatic aberration, color banding, lack of detail, oversharpened, unnatural, distorted, deformed, unrealistic, awkward, creepy, dark.",
+      "clip": [
+        "125",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "138": {
+    "inputs": {
+      "interpolation": "BILINEAR",
+      "crop_position": "top",
+      "sharpening": 0.15,
+      "image": [
+        "110",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision"
+  },
+  "139": {
+    "inputs": {
+      "face_mask": true,
+      "background_mask": false,
+      "hair_mask": true,
+      "body_mask": false,
+      "clothes_mask": false,
+      "confidence": 0.4,
+      "images": [
+        "61",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "141": {
+    "inputs": {
+      "face_mask": true,
+      "background_mask": false,
+      "hair_mask": true,
+      "body_mask": false,
+      "clothes_mask": false,
+      "confidence": 0.4,
+      "images": [
+        "90",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "145": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "subtract",
+      "destination": [
+        "139",
+        0
+      ],
+      "source": [
+        "130",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "147": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "subtract",
+      "destination": [
+        "141",
+        0
+      ],
+      "source": [
+        "132",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "151": {
+    "inputs": {
+      "weight": 1,
+      "ipadapter": [
+        "123",
+        0
+      ],
+      "image": [
+        "138",
+        0
+      ],
+      "clip_vision": [
+        "124",
+        0
+      ]
+    },
+    "class_type": "IPAdapterEncoder"
+  },
+  "152": {
+    "inputs": {
+      "head": "fooocus_inpaint_head.pth",
+      "patch": "inpaint_v26.fooocus.patch"
+    },
+    "class_type": "INPAINT_LoadFooocusInpaint"
+  },
+  "153": {
+    "inputs": {
+      "grow_mask_by": 0,
+      "pixels": [
+        "192",
+        0
+      ],
+      "vae": [
+        "125",
+        2
+      ],
+      "mask": [
+        "170",
+        0
+      ]
+    },
+    "class_type": "VAEEncodeForInpaint"
+  },
+  "154": {
+    "inputs": {
+      "expand": 40,
+      "tapered_corners": true,
+      "mask": [
+        "130",
+        0
+      ]
+    },
+    "class_type": "GrowMask"
+  },
+  "155": {
+    "inputs": {
+      "expand": 40,
+      "tapered_corners": true,
+      "mask": [
+        "132",
+        0
+      ]
+    },
+    "class_type": "GrowMask"
+  },
+  "156": {
+    "inputs": {
+      "model": [
+        "129",
+        0
+      ],
+      "patch": [
+        "152",
+        0
+      ],
+      "latent": [
+        "153",
+        0
+      ]
+    },
+    "class_type": "INPAINT_ApplyFooocusInpaint"
+  },
+  "157": {
+    "inputs": {
+      "noise_mask": false,
+      "positive": [
+        "136",
+        0
+      ],
+      "negative": [
+        "137",
+        0
+      ],
+      "vae": [
+        "125",
+        2
+      ],
+      "pixels": [
+        "192",
+        0
+      ],
+      "mask": [
+        "170",
+        0
+      ]
+    },
+    "class_type": "InpaintModelConditioning"
+  },
+  "158": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "subtract",
+      "destination": [
+        "145",
+        0
+      ],
+      "source": [
+        "147",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "161": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "add",
+      "destination": [
+        "154",
+        0
+      ],
+      "source": [
+        "155",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "164": {
+    "inputs": {
+      "weight": 0.9,
+      "weight_type": "ease in",
+      "start_at": 0,
+      "end_at": 0.9,
+      "embeds_scaling": "V only",
+      "model": [
+        "156",
+        0
+      ],
+      "ipadapter": [
+        "123",
+        0
+      ],
+      "pos_embed": [
+        "151",
+        0
+      ],
+      "neg_embed": [
+        "151",
+        1
+      ],
+      "clip_vision": [
+        "124",
+        0
+      ]
+    },
+    "class_type": "IPAdapterEmbeds"
+  },
+  "165": {
+    "inputs": {
+      "amount": 1,
+      "samples": [
+        "157",
+        2
+      ]
+    },
+    "class_type": "RepeatLatentBatch"
+  },
+  "166": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "subtract",
+      "destination": [
+        "145",
+        0
+      ],
+      "source": [
+        "158",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "167": {
+    "inputs": {
+      "amount": 40,
+      "mask": [
+        "166",
+        0
+      ]
+    },
+    "class_type": "MaskSmooth+"
+  },
+  "170": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "subtract",
+      "destination": [
+        "161",
+        0
+      ],
+      "source": [
+        "167",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "173": {
+    "inputs": {
+      "seed": 722540679852014,
+      "steps": 25,
+      "cfg": 8,
+      "sampler_name": "ddpm",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "164",
+        0
+      ],
+      "positive": [
+        "157",
+        0
+      ],
+      "negative": [
+        "157",
+        1
+      ],
+      "latent_image": [
+        "165",
+        0
+      ]
+    },
+    "class_type": "KSampler"
+  },
+  "174": {
+    "inputs": {
+      "samples": [
+        "173",
+        0
+      ],
+      "vae": [
+        "125",
+        2
+      ]
+    },
+    "class_type": "VAEDecode"
+  },
+  "175": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "SaveImage"
+  },
+  "176": {
+    "inputs": {
+      "face_mask": false,
+      "background_mask": false,
+      "hair_mask": false,
+      "body_mask": true,
+      "clothes_mask": true,
+      "confidence": 0.5,
+      "images": [
+        "61",
+        0
+      ]
+    },
+    "class_type": "APersonMaskGenerator"
+  },
+  "178": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 0,
+      "remove_isolated_pixels": 30,
+      "smooth": 0,
+      "blur": 0,
+      "mask": [
+        "176",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "179": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 35,
+      "remove_isolated_pixels": 0,
+      "smooth": 20,
+      "blur": 0,
+      "mask": [
+        "178",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "180": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 35,
+      "remove_isolated_pixels": 0,
+      "smooth": 20,
+      "blur": 0,
+      "mask": [
+        "139",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "183": {
+    "inputs": {
+      "mask": [
+        "179",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "187": {
+    "inputs": {
+      "mask": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "MaskToImage"
+  },
+  "189": {
+    "inputs": {
+      "width": [
+        "63",
+        0
+      ],
+      "height": [
+        "63",
+        1
+      ],
+      "batch_size": 1,
+      "color": 0
+    },
+    "class_type": "EmptyImage"
+  },
+  "190": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "add",
+      "destination": [
+        "179",
+        0
+      ],
+      "source": [
+        "180",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "191": {
+    "inputs": {
+      "erode_dilate": 0,
+      "fill_holes": 20,
+      "remove_isolated_pixels": 0,
+      "smooth": 0,
+      "blur": 0,
+      "mask": [
+        "190",
+        0
+      ]
+    },
+    "class_type": "MaskFix+"
+  },
+  "192": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "189",
+        0
+      ],
+      "source": [
+        "61",
+        0
+      ],
+      "mask": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  }
+}
